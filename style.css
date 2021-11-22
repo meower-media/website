@@ -147,4 +147,9 @@ button{
 .color_orange{
   background-color: #F29748;
   horizontal-align: right;
+	display: inline;
+}
+.meower_gui{
+	padding-left: 10px
+		
 }
