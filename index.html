@@ -9,17 +9,12 @@
     <title>Awesome Search Box</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background: #00a08d;
-      }
       .search-box {
         position: absolute;
-        top: 50%;
-        left: 50%;
+        top: 4%;
+        left: 35%;
         transform: translate(-50%, -50%);
-        background: #666666;
+        background: #fff;
         height: 40px;
         border-radius: 40px;
         padding: 10px;
@@ -27,6 +22,7 @@
         justify-content: space-between;
       }
       .search-box:hover > .search-txt {
+        
         width: 240px;
         padding: 0 6px;
       }
@@ -35,11 +31,12 @@
         color: black;
       }
       .search-btn {
-        color: #eeeeee;
+        
+        color: #fff;
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        background: #2f3640;
+        background: orange;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -49,9 +46,11 @@
         text-decoration: none;
       }
       .search-btn > i {
+       
         font-size: 20px;
       }
       .search-txt {
+        
         border: none;
         background: none;
         outline: none;
@@ -69,18 +68,19 @@
   </head>
   <body>
     <div id="scratch" class="logo" href="index.html">meower <a id="scratch" class="link" href="index.html">home</a> <a id="scratch" class="link" href="blog.html">development</a> <a id="scratch" class="link" href="media.html">media</a></div>
+    <div class="search-box">
+      <input type="text" name="name" class="search-txt" placeholder="Type to search" />
+      <a class="search-btn" href="#">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </a>
+    </div>
     <br>
     <div class="content">
       <h2 style="color:orange;">Welcome to Meower!</h2>
        <div class="meower-info"> Meower is a cloud-based social media. Its goal is to provide a state-of-the-art social media for everyone. </div>
       <div class="color_orange"><img class="meower_gui" src="assets/screenshot.png">
       <br>
-      <div class="search-box">
-      <input type="text" name="name" class="search-txt" placeholder="Type to search" />
-      <a class="search-btn" href="#">
-        <i class="fa fa-search" aria-hidden="true"></i>
-      </a>
-    </div>
+
       <script>
         
       </script>
