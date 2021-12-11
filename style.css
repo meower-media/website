@@ -157,3 +157,7 @@ button{
   width: 100%;
   height: auto;
 }
+
+#grad {
+  background-image: linear-gradient(white, rgba(255,216,192,255));
+}
