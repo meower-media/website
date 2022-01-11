@@ -83,8 +83,8 @@ body{
 }
 .content{
 	margin-top:60px
-	 float: left;
-  width: 50%;
+	float: left;
+   	width: 50%;
 }
 ol.code{
 	background:rgba(221,221,221,.76);
