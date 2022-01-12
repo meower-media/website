@@ -7,9 +7,20 @@
     <title>meower</title>
     <link rel="shortcut icon" href="assets/77336943.png" type="image/x-icon">
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <div id="scratch" class="logo" href="/">meower <a id="scratch" class="link" href="/">home</a> <a id="scratch" class="link" href="https://app.meower.org">meower</a> <a id="scratch" class="link" href="https://wiki.meower.org">wikimeower</a></div>
+    <div class="topnav" id="myTopnav">
+    <div id="scratch" class="logo" class="active" href="/">
+      meower 
+      <a id="scratch" class="link" href="/">home</a> 
+      <a id="scratch" class="link" href="https://app.meower.org">meower</a>
+      <a id="scratch" class="link" href="https://wiki.meower.org">wikimeower</a>
+    </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
     <br>
     <div class="content">
       <div class="row">
@@ -37,5 +48,15 @@ Where do you want to go? </div>
   </div>
 </div>
     </div>
+    <script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
   </body>
 </html>
