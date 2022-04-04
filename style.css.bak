@@ -154,6 +154,7 @@ button{
 }
 .meower_gui{
 	padding-left: 10px
+		
 }
 .hub {
   width: 100%;

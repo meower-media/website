@@ -11,7 +11,7 @@
     <div id="scratch" class="logo" href="/"><a id="scratch" href="/">Meower </a><a id="scratch" class="link" href="https://app.meower.org">launch</a> <a id="scratch" class="link" href="https://wiki.meower.org">wiki</a> <a id="scratch" class="link" href="https://beta.meower.org">beta</a> <a id="scratch" class="link" href="/legal.html">legal</a></div>
     <br>
     <div class="content">
-	  <img src="assets/logo.svg" width="25%" height="25%">
+	  <img src="assets/logo.svg" width="50%" height="50%">
       <h2 style="color:#ff5600;">Welcome!</h2>
       <div class="meower-info">Meower is a free, open-source, and nonprofit social media platform. Meower is also a (currently WIP) alternative to Twitter, Discord, and Reddit, completely free of advertising, tracking, data collection, and more. Wanna join Meower? <a id="scratch" class="link"  href="https://app.meower.org/">Click here to Launch Meower!</a></div>
 	  <h2 style="color:#ff5600;">A friendly place to be</h2>

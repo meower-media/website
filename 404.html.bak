@@ -13,7 +13,7 @@
     <br>
     <div class="content">
       <h2 style="color:orange;">404</h2>
-       <div class="meower-info"> It seems the page you're looking for doesn't exist. <br><i>Click the Meower button to return home.</i></div>
+       <div class="meower-info"> It seems the page you're looking for doesn't exist. <br><i>Click the home button to return.</i></div>
     </div>
   </body>
 </html>
