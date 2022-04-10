@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>meower | Discord</title>
+        <link rel="shortcut icon" href="assets/77336943.png" type="image/x-icon">
+        <link href="style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <script>
+            class Cloudlink {
+                constructor(server) {
+                    this.events = {};
+                    this.ws = new WebSocket(server);
+                    this.ws.onopen = async () => {
+                        this.send({
+                            cmd: 'direct',
+                            val: {
+                                cmd: 'ip',
+                                val: await (await fetch('https://api.meower.org/ip')).text(),
+                            },
+                        });
+                        this.send({
+                            cmd: 'direct',
+                            val: { cmd: 'type', val: 'js' },
+                        });
+                        this.emit('connected');
+                    };
+                    this.ws.onmessage = (socketdata) => {
+                        var data = JSON.parse(socketdata.data);
+                        this.emit(data.cmd, data);
+                    };
+                    this.ws.onclose = () => {
+                        this.emit('disconnected');
+                    };
+                    this.ws.onerror = (e) => {
+                        this.emit('error', e);
+                    };
+                }
+                send(data) {
+                    this.ws.send(JSON.stringify(data));
+                }
+                on(event, cb) {
+                    if (typeof this.events[event] !== 'object')
+                        this.events[event] = [];
+                    this.events[event].push(cb);
+                }
+                emit(event, data) {
+                    if (typeof this.events[event] !== 'object')
+                        return;
+                    this.events[event].forEach((cb) => cb(data));
+                }
+                disconnect() {
+                    this.ws.close();
+                }
+            }
+
+            function error(errorDetails) {
+                if (document.getElementById("errorDialog").style.display == "none" && document.getElementById("successDialog").style.display == "none") {
+                    document.getElementById("loginForm").style.display = "none";
+                    document.getElementById("errorDialog").style.display = "block";
+                    document.getElementById("errorText").innerText = errorDetails;
+                    cljs.ws.close();
+                }
+            }
+
+            function login() {
+                document.getElementById("submit").disabled = true;
+                document.getElementById("submit").innerText = "Connecting...";
+                window.cljs = new Cloudlink("wss://server.meower.org");
+                cljs.on('connected', () => {
+                    document.getElementById("submit").innerText = "Authenticating...";
+                    cljs.send({cmd: "direct", val: "meower", listener: "trustCheck"})
+                });
+                cljs.on('statuscode', (data) => {
+                    if (data.val != "I:100 | OK" && data.val != "I:112 | Trusted Access enabled") {
+                        error(`CloudLink Error: ${data.val}`);
+                    } else if (data.val == "I:100 | OK" && data.listener == "trustCheck") {
+                        cljs.send({cmd: "direct", val: {cmd: "authpswd", val: {username: document.getElementById("username").innerText, pswd: document.getElementById("username").innerText}}, listener: "auth"})
+                    } else if (data.val == "I:100 | OK" && data.listener == "auth") {
+                        document.getElementById("submit").innerText = "Verifying...";
+                        const queryString = window.location.search;
+                        const urlParams = new URLSearchParams(queryString);
+                        cljs.send({cmd: "pmsg", id: "Discord", val: {cmd: "link", token: urlParams.get('token')}})
+                    }
+                });
+                cljs.on('pmsg', (data) => {
+                    if (data.origin == "Discord") {
+                        if (data.val == "I:100 | OK") {
+                            document.getElementById("loginForm").style.display = "none";
+                            document.getElementById("successDialog").style.display = "block";
+                            cljs.ws.close();
+                        } else {
+                            error(`Auth Bot Error: ${data.val}`)
+                        }
+                    }
+                });
+                cljs.on('ulist', (data) => {
+                    if (data.val.includes("Discord") == false) {
+                        error("Auth Bot Error: AUTH_BOT_OFFLINE");
+                    }
+                });
+                cljs.on('disconnected', () => {
+                    error("CloudLink Error: LOST_CONNECTION");
+                });
+            }
+        </script>
+        <div id="scratch" class="logo" href="/"><a id="scratch" href="/">Meower </a><a id="scratch" class="link" href="https://app.meower.org">launch</a> <a id="scratch" class="link" href="https://wiki.meower.org">wiki</a> <a id="scratch" class="link" href="https://beta.meower.org">beta</a> <a id="scratch" class="link" href="/legal.html">legal</a></div>
+        <br>
+        <div class="content" id="loginForm">
+            <h2 style="color:#ff5600;">Link Meower account to your Discord account</h2>
+            <div class="meower-info">To link your Meower account to your Discord account, just login below!<br>If you don't have a Meower account click <a href="https://app.meower.org" target="_blank">here</a> to open Meower and create one!</div>
+            <br><br>
+            <form action="#">
+                <input type="text" id="username" placeholder="Username" /><br><br>
+                <input type="password" id="password" placeholder="Password" /><br><br><br>
+                <button type="submit" id="submit" onclick="login();">Login and Link</button>
+            </form>
+        </div>
+        <div class="content" id="errorDialog" style="display: none;">
+            <h2 style="color:#ff5600;">Me-owch! We ran into an error.</h2>
+            <div class="meower-info" id="errorText"></div>
+        </div>
+        <div class="content" id="successDialog" style="display: none;">
+            <h2 style="color:#ff5600;">Successfully Linked!</h2>
+            <div class="meower-info">Well done! YOu have successfully linked your Meower account to your Discord account.</div>
+        </div>
+    </body>
+</html>
