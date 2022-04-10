@@ -77,7 +77,7 @@
                     if (data.val != "I:100 | OK" && data.val != "I:112 | Trusted Access enabled") {
                         error(`CloudLink Error: ${data.val}`);
                     } else if (data.val == "I:100 | OK" && data.listener == "trustCheck") {
-                        cljs.send({cmd: "direct", val: {cmd: "authpswd", val: {username: document.getElementById("username").value, pswd: document.getElementById("username").value}}, listener: "auth"})
+                        cljs.send({cmd: "direct", val: {cmd: "authpswd", val: {username: document.getElementById("username").value, pswd: document.getElementById("password").value}}, listener: "auth"})
                     } else if (data.val == "I:100 | OK" && data.listener == "auth") {
                         document.getElementById("submit").innerText = "Verifying...";
                         const queryString = window.location.search;
