@@ -10,6 +10,28 @@
             font-family: simvoni;
             src: url(https://meower.org/fonts/new-meower-fonts/SimvoniBold.ttf) format("truetype")
         }
+		.fade-in-animation {
+			animation: fadeIn: 5s;
+			-webkit-animation: fadeIn 5s;
+			-moz-animation: fadeIn 5s;
+			-o-animation: fadeIn 5s;
+		}
+		@keyframes fadeIn {
+			0% {opacity: 0;}
+			100% {opacity: 1;}
+		}
+		@-webkit-keyframes fadeIn {
+			0% {opacity: 0;}
+			100% {opacity: 1;}
+		}
+		@-moz-keyframes fadeIn {
+			0% {opacity: 0;}
+			100% {opacity: 1;}
+		}
+		@-o-keyframes fadeIn {
+			0% {opacity: 0;}
+			100% {opacity: 1;}
+		}
 		.container {
 	width: 80%;
 	margin: 0 auto;
@@ -126,10 +148,10 @@ nav a:hover {
 
 		
 </header>
-<center><h5>THE MEOWER PROJECT</h5>
+<center><div class="fade-in-animation"><h5>THE MEOWER PROJECT</h5>
 		<h1>A <span style="color: #F9A637">state-of-the-art</span> social <br>media platform for everyone</h1>
   <a href="https://app.meower.org"><button class="button1"><h2>Launch Meower</h2></button></a> <a href=https://github.com/meower-media-co/><button class="button2"><h2>Learn More&nbsp;</h2>
-		</button></a>
+		</button></a></div>
 	</center>
 <div class="stack-bottom"><div class="meowy_bg"><img height="700" src="https://meower.org/assets/cloudymeowy.png"></div></div>
 </body>
