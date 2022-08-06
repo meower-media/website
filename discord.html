@@ -82,7 +82,7 @@
                         document.getElementById("submit").innerText = "Verifying...";
                         const queryString = window.location.search;
                         const urlParams = new URLSearchParams(queryString);
-                        cljs.send({cmd: "pvar", id: "Discord", name: "discord", val: {cmd: "discord", token: urlParams.get('token')}})
+                        cljs.send({cmd: "pvar", id: "Discord", name: "discord", val: urlParams.get('token')})
                     }
                 });
                 cljs.on('pvar', (data) => {
