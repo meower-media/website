@@ -82,17 +82,17 @@
                         document.getElementById("submit").innerText = "Verifying...";
                         const queryString = window.location.search;
                         const urlParams = new URLSearchParams(queryString);
-                        cljs.send({cmd: "pmsg", id: "Discord", val: {cmd: "link", token: urlParams.get('token')}})
+                        cljs.send({cmd: "pvar", id: "Discord", name: "discord", val: {cmd: "discord", token: urlParams.get('token')}})
                     }
                 });
-                cljs.on('pmsg', (data) => {
-                    if (data.origin == "Discord") {
+                cljs.on('pvar', (data) => {
+                    if (data.origin == "Discord" && data.name == "discord") {
                         if (data.val == "I:100 | OK") {
                             document.getElementById("loginForm").style.display = "none";
                             document.getElementById("successDialog").style.display = "block";
                             cljs.ws.close();
                         } else {
-                            error(`Auth Bot Error: ${data.val}`)
+                            error(`Auth Bot Error: ${data.val}`);
                         }
                     }
                 });
