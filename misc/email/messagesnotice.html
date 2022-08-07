@@ -18,6 +18,17 @@
 		font-size: 20px;
 		text-align: left 
 	}
+	.message-container {
+		width: 560px;	
+		border-radius: 14px;
+		background-color: #fff;
+		padding: 0px 20px;
+		border: none;
+		font-family: simvoni; 	
+		color: #000;
+		font-size: 20px;
+		text-align: left 
+	}
 	h2 {
 		padding-left: 10px;
 		padding-top: 20px;	
@@ -30,7 +41,7 @@
 	img {
 		margin-top: 20px; margin-bottom:10px;
 	}
-	button1 {
+	.button1 {
 		border-radius: 14px;
 		background-color: #F9A637;
 		padding: 10px 50px 10px 50px;
@@ -41,7 +52,7 @@
 	    margin-right: 15px;
 		cursor: pointer;
 	}
-	button2 {
+	.button2 {
 		border-radius: 14px;
 		background-color: #fff;
 		padding: 10px 40px 10px 40px;
@@ -57,21 +68,23 @@
 
 <body>
 	<center><img height="70px" src="https://meower.org/assets/logo_black.png"></center><center><div class="email-container">
-	<h2>Password Change</h2>
-    <p>Dear [user],<br><br>
-      Your password has just been changed from IP [127.0.0.1]<br>
-      <br>
-      If this was you, you can ignore this email.&nbsp; <br>
-      <br>
-      If this is not you, please request account recovery.&nbsp;&nbsp;<br>
+	<h2>Messages&nbsp;</h2>
+    <p> You have [number] unread messages on your Meower account!<br>
 <br>
-<br>
-		<button1>Account Recovery</button1><br>
+Messages like:
+<div class="message-container"><img style="margin-right: 20px;" src="https://assets.meower.org/PFP/21.png"><h2 style="margin-top: -130px; margin-left: 100px;">user<br>
+<span style="font-size: 18px; color: #989898; font-weight: 100;">MM/DD/YYYY</span></h2><br><br> <p style="margin-top: -25px;">message-body</p>
+</div><br>
+	<div class="message-container"><img style="margin-right: 20px;" src="https://assets.meower.org/PFP/21.png"><h2 style="margin-top: -130px; margin-left: 100px;">user<br>
+<span style="font-size: 18px; color: #989898; font-weight: 100;">MM/DD/YYYY</span></h2><br><br> <p style="margin-top: -25px;">message-body</p>
+</div><br>
+
+<button class="button2">Stop Message Reminders</button><br>
 <br><br>
 
 <span style="font-size: 18px;"><em>Or copy and paste the links in your browser:<br>
 <br>
-Account Recovery: https://meower.org/...</em></span><br>
+Stop Message Reminders: https://meower.org/...</em></span><br>
 <br>
 
 - Meower Media Co.</p>
