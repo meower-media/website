@@ -838,6 +838,7 @@ html {
 }
 
 .top {
+  backdrop-filter: blur(10px);
   background-color: White;
   opacity: 0.6;
   position: absolute;
