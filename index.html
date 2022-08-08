@@ -1,30 +1,206 @@
-<!DOCTYPE html>
+<!doctype html>
+<!-- Hello there! This webpage was made by zedthehedgehog, a total html noob, so the code is pretty messy, enter at your own risk. -->
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>meower</title>
-    <link rel="shortcut icon" href="assets/77336943.png" type="image/x-icon">
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <div id="scratch" class="logo" href="/"><a id="scratch" href="/">Meower </a><a id="scratch" class="link" href="https://app.meower.org">launch</a> <a id="scratch" class="link" href="https://wiki.meower.org">wiki</a> <a id="scratch" class="link" href="https://beta.meower.org">beta</a> <a id="scratch" class="link" href="/legal.html">legal</a></div>
-    <br>
-    <div class="content">
-	  <img src="assets/logo.svg" width="25%" height="25%">
-      <h2 style="color:#ff5600;">Welcome!</h2>
-      <div class="meower-info"><a href="https://www.meower.org/Meower Information.html">Check out our Meower interactive information page!</a><br><br>Meower is a free, open-source, and nonprofit social media platform. Meower is also a (currently WIP) alternative to Twitter, Discord, and Reddit, completely free of advertising, tracking, data collection, and more. Wanna join Meower? <a id="scratch" class="link"  href="https://app.meower.org/">Click here to Launch Meower!</a></div>
-	  <h2 style="color:#ff5600;">A friendly place to be</h2>
-      <div class="meower-info">Designed to be friendly for all ages, Meower has moderators and friends all-around. We're committed to keeping Meower a safe place to be.</div>
-	  <h2 style="color:#ff5600;">An original</h2>
-      <div class="meower-info">Meower started life as a Scratch 3.0-based social media platform. We have a long history, too! Check out our <a id="scratch" class="link" href="https://wiki.meower.org">wiki</a> for more info!</div>
-	  <h2 style="color:#ff5600;">Freedom to the masses</h2>
-      <div class="meower-info">Everyone is welcome to use Meower. We don't have censorship, we have no political agendas, and we don't care about money. Meower is just a place to hang out, nothing more, nothing less.</div>
-	  <h2 style="color:#ff5600;">Simple and elegant</h2>
-      <div class="meower-info">Meower's designed to be as easy to use. What you see, is what you get.<br> </br></div>
-	  <img src="assets/welcome.png" width="35%" height="35%"> <img src="assets/gui_sample.png" width="35%" height="35%">
-	  <h2 style="color:#ff5600;">Fully FOSS</h2>
-      <div class="meower-info">Anyone is welcome to contribute to Meower on <img src="assets/github.png" width="1.5%" height="1.5%"><a id="scratch" class="link" href="https://github.com/meower-media-co/">GitHub.</a> If you know Python, Scratch, HTML5, JavaScript, Node, Vue, Etc. You're welcome to join the party!</div>
-    </div>
-  </body>
+<head>
+	<link rel="shortcut icon" href="https://meower.org/assets/77336943.png" type="image/x-icon">
+<meta charset="utf-8">
+<title>meower</title>
+	<style>
+.large {
+			font-size: 20px;
+		}
+		::-moz-selection {
+  color: white;
+  background: #F9A637;
+}
+		
+		::-webkit-selection {
+  color: white;
+  background: #F9A637;
+}		
+		
+		::-o-selection {
+  color: white;
+  background: o#F9A637;
+}		
+
+::selection {
+	color: white;
+  background: #F9A637;
+}
+		@font-face {
+            font-family: simvoni;
+            src: url(https://meower.org/fonts/new-meower-fonts/SimvoniBold.ttf) format("truetype")
+        }
+		.fade-in-animation {
+			animation: fadeIn: 2s;
+			-webkit-animation: fadeIn 2s;
+			-moz-animation: fadeIn 2s;
+			-o-animation: fadeIn 2s;
+		}
+		@keyframes fadeIn {
+			0% {opacity: 0;}
+			100% {opacity: 1;}
+		}
+		@-webkit-keyframes fadeIn {
+			0% {opacity: 0;}
+			100% {opacity: 1;}
+		}
+		@-moz-keyframes fadeIn {
+			0% {opacity: 0;}
+			100% {opacity: 1;}
+		}
+		@-o-keyframes fadeIn {
+			0% {opacity: 0;}
+			100% {opacity: 1;}
+		}
+		.container {
+	width: 80%;
+	margin: 0 auto;
+}
+		header {
+			background: white;
+		}
+		
+		nav {
+			float: right;
+			  margin: 0;
+  padding: 0;
+		}
+
+li {
+  display: inline-block;
+  margin-left: 20px;
+  margin-top:10px;
+	padding-right: 23px;
+	  list-style: none;
+
+
+}
+		nav a {
+  color: #444;
+  text-decoration: none;
+  font-size: 20px;
+font-family: simvoni;
+			font-weight: bolder;
+			
+}
+
+nav a:hover {
+  color: #000;
+}
+
+		.meowy_bg {
+	position: fixed;
+  	bottom: 0;
+	right: 0;		
+		
+			}
+		center {
+			  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+ right: 15%;			
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+		}
+		.button1 {
+		border-radius: 14px;
+		background-color: #F9A637;
+		padding: 0px 24px;
+		border: none;
+		font-family: simvoni;
+		font-size: 32; 	
+		color: #fff;
+	    margin-right: 15px;
+		cursor: pointer;
+		transtiton-duration: 4s;
+		-webkit-transition:  -webkit-transform .2s ease-out;
+		-moz-transition:  -moz-transform .2s ease-out;
+		-o-transition:  -o-transform .2s ease-out;		
+		transition: transform .2s ease-out;
+		
+		}
+		.button2 {
+		border-radius: 14px;
+		background-color: #E8F3FD;
+		padding: 0px 34px;
+		border: none;
+		font-family: simvoni;
+		font-size: 32; 	
+		color: #000;
+		cursor: pointer;
+		transtiton-duration: 4s;
+				-webkit-transition:  -webkit-transform .2s ease-out;
+		-moz-transition:  -moz-transform .2s ease-out;
+		-o-transition:  -o-transform .2s ease-out;		
+		transition: transform .2s ease-out;	
+		}
+		.button1:hover {
+		-webkit-transform:scale(1.1);
+		-moz-transform:scale(1.1);
+		-o-transform:scale(1.1);	
+		transform:scale(1.1);	
+		}
+				.button2:hover {
+		-webkit-transform:scale(1.1);
+		-moz-transform:scale(1.1);
+		-o-transform:scale(1.1);	
+		transform:scale(1.1);	
+		}
+			.img1 {
+  filter: brightness(0%);
+  margin-left: 10px;
+	margin-top: 10px;		
+}
+				.stack-bottom {
+    position:absolute;
+    z-index:-999;
+}
+			p, h2, h3, h4 {
+		font-family: Simvoni;
+		font-weight: 1000;	
+		margin-top 0;		
+	}
+		h1 {
+		font-family: Simvoni;
+		font-weight: 1000;	
+		font-size: 60 px;
+		margin-top 0;	
+	}
+		h5 {
+	 	font-family: simvoni;
+		letter-spacing: 5px;	
+		font-size: 14px;
+		margin-top 0;	
+		}
+	</style>
+	
+</head>
+
+<body>
+	<div class="container"></div>
+	<header style="margin-top: -16px; margin-left: -8px; margin-right: -8px"><a href="https://meower.org"><img style="margin-left:10px;margin-top:10px;filter: brightness(0%)" height="50" src="https://meower.org/assets/logo.png"></a></div>
+			<ul style="float: right;">
+		<li ><nav><a href="https://app.meower.org">launch</a></nav></li>
+		<li ><nav> <a href="https://svelte.meower.org">svelte</a></nav></li>		
+		<li ><nav> <a href="https://meower.org/downloads">downloads</a></nav></li>
+		<li ><nav> <a href="https://meower.org/legal/">legal</a></nav></li>
+		<li ><nav> <a href="https://wiki.meower.org">wiki</a></nav></li>
+				
+		</ul>
+		
+	
+
+		
+</header><div class="large">
+<center><div class="fade-in-animation"><h5>THE MEOWER PROJECT</h5>
+		<h1>A <span style="color: #F9A637">state-of-the-art</span> social <br>
+	    media platform for everyone.</h1>
+  <a href="https://app.meower.org"><button class="button1"><h2>Launch Meower</h2></button></a> <a href=https://github.com/meower-media-co/><button class="button2"><h2>Learn More&nbsp;</h2>
+		</button></a></div>
+	</center>
+<div class="stack-bottom"><div class="meowy_bg"><img height="700" src="https://meower.org/assets/cloudymeowy.png"></div></div>
+</body>
 </html>
