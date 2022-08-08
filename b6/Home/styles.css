@@ -19,7 +19,7 @@ body {
 li {
   padding-bottom: 18px;
   list-style: None;
-  
+
   max-height: 20%;
 }
 
@@ -822,11 +822,19 @@ html {
   margin: 0;
   background-image: url(https://cdn.discordapp.com/attachments/955948542831243294/1004622086792298496/unknown.png) !important;
   background-color: None !important;
-  background-repeat: no-repeat; 
-  width:100% ;
+  background-repeat: no-repeat;
+  width: 100%;
   height: 100%;
   overflow: scroll;
-background-size: repeat; 
+  background-size: repeat;
+}
+html { 
+ 
+  background:  url(https://cdn.discordapp.com/attachments/955948542831243294/1004622086792298496/unknown.png) no-repeat center center fixed; !important 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .top {
@@ -842,14 +850,17 @@ background-size: repeat;
 
 }
 
+/*
+
 .post_changes .creator {
   display: table;
-  
+
 }
+*/
 .post_changes p {
-  left: -100vh;
-  position: relative;
+  left: 1vh;
+  position: absolute;
   text-align: left;
   overflow: hidden;
-  top: 40px;
+  top: 60px;
 }
