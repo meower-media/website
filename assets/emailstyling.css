@@ -1,0 +1,28 @@
+@font-face {
+            font-family: simvoni;
+            src: url(https://meower.org/fonts/new-meower-fonts/SimvoniBold.ttf) format("truetype")
+        }
+	.email-container {
+		margin-left: 300px;
+		margin-right: 300px;
+		width: 100;	
+		border-radius: 14px;
+		background-color: #E8F3FD;
+		padding: 0px 20px;
+		border: none;
+		font-family: simvoni; 	
+		color: #000;
+		font-size: 20px;
+	}
+	h2 {
+		padding-left: 10px;
+		padding-top: 20px;	
+	}
+	p {
+		font-family: simvoni;
+		padding: 10px;
+		padding-bottom: 20px;
+	}
+	img {
+		margin-top: 20px; margin-bottom:10px; filter:brightness(0)
+	}
