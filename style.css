@@ -42,6 +42,14 @@ a{
 	font-size: xx-large;
 }
 
+.body{
+	color:#ffffff;
+	align-content: center;
+	text-align: center;
+	font-family: 'Simvoni';
+	font-size: larger;
+}
+
 .postbutton:active{
 	background-color:#BB7A00;
 }
