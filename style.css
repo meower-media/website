@@ -6,6 +6,10 @@
 	src:url(./fonts/Simvoni.ttf) format("truetype")
 }
 @font-face{
+	font-family:'Simvoni';
+	src:url(./fonts/Simvoni.ttf) format("truetype")
+}
+@font-face{
 	font-family:'Code';
 	src:url(./fonts/CODE.ttf) format("truetype"),url(./fonts/CODE.woff) format("woff")
 }
