@@ -19,13 +19,27 @@
 a{
 	text-decoration:none}.float-right{float:right}.postbutton{height:23px;position:relative;top:-3px;border-color:#fff;
 	background-color:#ff5600;
+	font-size: large;
 	padding:4px;line-height:0;
 	box-shadow:none;
-	margin:0 3px
+	margin:0 3px;
 }
+
+.nav-links{
+	font-size: larger;
+	color: #fff;
+}
+
 .white{
-	color:#fff
+	color:#fff;
 }
+
+.title{
+	color:#ffffff;
+	align-content: center;
+	text-align: center;
+}
+
 .postbutton:active{
 	background-color:#BB7A00
 }
