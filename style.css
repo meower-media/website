@@ -14,7 +14,7 @@
 	src:url(./fonts/AVANT.otf) format('opentype')
 }
 *{
-	font-family:"Arial"
+	font-family:"Simvoni"
 }
 a{
 	text-decoration:none}.float-right{float:right}.postbutton{height:23px;position:relative;top:-3px;border-color:#fff;
@@ -38,49 +38,52 @@ a{
 	color:#ffffff;
 	align-content: center;
 	text-align: center;
+	font-family: 'Simvoni';
+	font-size: xx-large;
 }
 
 .postbutton:active{
-	background-color:#BB7A00
+	background-color:#BB7A00;
 }
 .link{
-	font-size:32px
+	font-size:32px;
 }
 #nav{
-	background-color:#ff5600
+	background-color:#ff5600;
 }
 #scratch{
-	font-family:'Scratch'
+	font-family:'Scratch';
 }
 #wiki{
-	font-family:'Scratch'
+	font-family:'Scratch';
 }
 #upper_tab{
 	background-color:#ff5600;
 	color:#fff;
-	padding:5px
+	padding:5px;
 }
 body{
 	background-color:#fff;
 	font-size:16px;
-	overflow-x:hidden
+	overflow-x:hidden;
+	font-family: 'Simvoni';
 }
 #blog{
 	margin-top:60px;
 	width:50%;
-	bottom:95px
+	bottom:95px;
 }
 #want_more{
 	position:absolute;
 	padding:15px;
 	border-radius:2px;
 	width:40%;
-	margin-left:52%
+	margin-left:52%;
 }
 #post{
 	border:5px solid #ff5600;
 	padding:5px;
-	border-radius:2px
+	border-radius:2px;
 }
 .logo{
 	color:#ff5600;
@@ -90,13 +93,13 @@ body{
 	position:absolute;
 	top:0;
 	left:0;
-	width:100%
+	width:100%;
 }
 .logo a{
-	text-decoration:none;color:#fff
+	text-decoration:none;color:#fff;
 }
 .content{
-	margin-top:60px
+	margin-top:60px;
 }
 ol.code{
 	background:rgba(221,221,221,.76);
@@ -110,13 +113,13 @@ ol.code{
 	border-left-style:solid;
 	border-left-color:#ff5600;
 	border-width:medium;
-	line-height:20px
+	line-height:20px;
 }
 ol.code li{
 	display:block;
 	color:rgb(0,0,0);
 	font-family:Code;
-	font-size:25px
+	font-size:25px;
 }
 ol.code li:before{
 content:counter(item) "  ";
@@ -126,7 +129,7 @@ display:inline-block;
 text-align:right;
 padding-left:1em;
 text-indent:-1.5em;
-margin-right:.5em
+margin-right:.5em;
 }
 .card{
 	padding:15px;
@@ -134,13 +137,13 @@ margin-right:.5em
 	border-radius:10px;
 	width:200px;
 	float:left;
-	margin-left:15px
+	margin-left:15px;
 }
 .card h3,.card p,.card button{
 	font-family:Card;
 	text-align:center;
 	margin:20px auto;
-	display:block
+	display:block;
 }
 button{
 	font-family:Card;
@@ -151,7 +154,7 @@ button{
 	padding-bottom:6px;
 	font-size:15px;
 	cursor:pointer;
-	box-shadow:0 8px 16px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19)
+	box-shadow:0 8px 16px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
 }
 .meower-info{
   font-family:Card;
@@ -167,7 +170,7 @@ button{
 	display: inline;
 }
 .meower_gui{
-	padding-left: 10px
+	padding-left: 10px;
 }
 .hub {
   width: 100%;
