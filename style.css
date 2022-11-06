@@ -34,6 +34,11 @@ a{
 	color: #fff;
 }
 
+.nav-links:visited{
+	font-size: larger;
+	color: #fff;
+}
+
 .white{
 	color:#fff;
 }
