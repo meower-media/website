@@ -3,19 +3,19 @@
 /* why all caps lol */
 @font-face{
 	font-family:'Scratch';
-	src:url(./fonts/Simvoni.ttf) format("truetype")
+	src:url(/fonts/Simvoni.ttf) format("truetype")
 }
 @font-face{
 	font-family:'Simvoni';
-	src:url(./fonts/Simvoni-Bold.ttf) format("truetype")
+	src:url(/fonts/Simvoni-Bold.ttf) format("truetype")
 }
 @font-face{
 	font-family:'Code';
-	src:url(./fonts/CODE.ttf) format("truetype"),url(./fonts/CODE.woff) format("woff")
+	src:url(/fonts/CODE.ttf) format("truetype"),url(/fonts/CODE.woff) format("woff")
 }
 @font-face{
 	font-family:'Card';
-	src:url(./fonts/AVANT.otf) format('opentype')
+	src:url(/fonts/AVANT.otf) format('opentype')
 }
 *{
 	font-family:"Simvoni"
