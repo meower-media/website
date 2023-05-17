@@ -16,13 +16,6 @@
                     this.ws.onopen = async () => {
                         this.send({
                             cmd: 'direct',
-                            val: {
-                                cmd: 'ip',
-                                val: await (await fetch('https://api.meower.org/ip')).text(),
-                            },
-                        });
-                        this.send({
-                            cmd: 'direct',
                             val: { cmd: 'type', val: 'js' },
                         });
                         this.emit('connected');
