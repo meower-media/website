@@ -1,61 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Meower | Homepage</title>
-  <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
-  <link href="/style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="assets/meowy.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Meower | Home</title>
 </head>
-<style>
-  section {
-      background:  rgba(0, 0, 0, 0.3);
-      color: white;
-      border-radius: 1em;
-      padding: 1em;
-      top: 50%;
-      left: 50%;
-      margin: auto;
-      width: 60%;
-      text-align: center;
-      align-self: center;
-      align-content: center; }
-</style>
-<body style="background-image: url('/assets/meowtain-blur.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; text-align: center; align-content: center; background-attachment: fixed;">
-  <br>
-  <section>
-    <a href="/"><img style='height: 50%; width: 50%; object-fit: contain' src="/assets/meowerlogo-white.svg"></a>
-  </section>
-  <br>
-  <section>
-    <a class="nav-links" href="https://app.meower.org">Launch</a> | <a class="nav-links" href="https://old.meower.org">Scratch Client</a> | <a class="nav-links" href="https://github.com/meower-media-co">GitHub</a> | <a class="nav-links" href="https://wiki.meower.org">Wiki</a> | <a class="nav-links" href="https://forums.meower.org">Forums</a> | <a class="nav-links" href="/legal.html">Legal</a>
-  </section>
-  <br>
-  <section>
-    <h1 class="title">Welcome!</h1>
-    <p class="body">Meower is a free, open-source, and nonprofit social media platform free of tracking, ads, and data collection. </p>
-  </section>
-  <br>
-  <section>
-    <h1 class="title">A friendly place to be</h1>
-    <p class="body">Meower is designed to be friendly for all ages. We're committed to keeping Meower a safe place to be.</p>
-  </section>
-  <br>
-  <section>
-    <h1 class="title">An original</h1>
-    <p class="body">Meower started life as a Scratch 3.0-based social media platform. We have a long history, too! Check out our <a class="white" href="https://wiki.meower.org"><u>wiki</u></a> for more info!</p>
-  </section>
-  <br>
-  <section>
-    <h1 class="title">Fully FOSS</h1>
-    <p class="body">Anyone is welcome to contribute, fork or view Meower on our <a class="white" href="https://github.com/meower-media-co"><u>GitHub</u></a>!</p>
-  </section>
-  <br>
-  <section>
-    <p class="body">©2020 - <script type="text/javascript">document.write( new Date().getFullYear() );</script> Meower Media</p>
-    <p class="body">Website redesign by <a class="white" href="https://joshatticus.is-a.dev">JoshAtticus</a></p>
-  </section>
+
+<body>
+  <header>
+    <a href="index.html"><img src="assets/meowerlogo-white.svg" alt="Meower Header"></a>
+  </header>
+
+  <nav class="sticky">
+    <a href="index.html"><i class="fas fa-home icon"></i>Home</a>
+    <a href="https://app.meower.org"><i class="fas fa-rocket icon"></i>Launch</a>
+    <a href="aboutus.html"><i class="fas fa-info-circle icon"></i>About Us</a>
+
+    <div class="dropdown">
+      <button class="dropbtn"><i class="fas fa-ellipsis-h icon"></i>More</button>
+      <div class="dropdown-content">
+        <a href="https://forums.meower.org/"><i class="fas fa-comments icon"></i>Forums</a>
+        <a href="https://wiki.meower.org/wiki/Home"><i class="fas fa-book icon"></i>Wiki</a>
+        <a href="https://github.com/meower-media-co"><i class="fab fa-github icon"></i>GitHub</a>
+        <a href="legal.html"><i class="fas fa-gavel icon"></i>Legal</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section>
+      <h1>Welcome!</h1>
+      <p>Meower is a free, open-source, and nonprofit social media platform free of tracking, ads, and data collection.
+        Join our community today and start connecting with like-minded individuals.</p>
+    </section>
+
+    <section>
+      <h1>Safe for All Ages</h1>
+      <p>A friendly place to be. We are committed to keeping Meower safe and welcoming for <em>all</em>. Our dedicated
+        team works tirelessly to enforce community guidelines and ensure a positive experience for everyone.</p>
+    </section>
+
+    <section>
+      <h1>Original</h1>
+      <p>Meower started life as a Scratch 3.0-based social media platform. We have a long history, too! With the
+        continuous support of our amazing community, we've evolved into a feature-rich platform for creators of all
+        kinds. Explore our <a href="https://wiki.meower.org/wiki/Home">wiki</a> to learn more about our journey.</p>
+    </section>
+
+    <section>
+      <h1>Open-Source</h1>
+      <p>Transparency is at the core of Meower. We believe in the power of open-source collaboration. Anyone is welcome
+        to contribute, fork, or view the Meower source code on our <a
+          href="https://github.com/meower-media-co">GitHub</a> repository. Together, we can build a better platform for
+        all.</p>
+    </section>
+
+    <section>
+      <h1>Join the Community</h1>
+      <p>Are you ready to join a vibrant community of creators and enthusiasts? <a href="https://app.meower.org" class="btn">Sign up</a> for a Meower account today and
+        start sharing your ideas, creations, and stories with the world. Let your voice be heard and connect with fellow
+        Meowers!</p>
+    </section>
+
+  </main>
+  <footer>
+    <p>&copy; 2020 -
+      <script type="text/javascript">document.write(new Date().getFullYear());</script> Meower Media
+    </p>
+  </footer>
+
+  <!-- Add your script tags for any JavaScript files here -->
+
 </body>
 
 </html>
+
