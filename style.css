@@ -1,7 +1,6 @@
 @font-face {
   font-family: 'simvoni';
   src: url('Simvoni.ttf') format('truetype');
-  /* Add more font formats if needed */
   font-weight: normal;
   font-style: normal;
 }
@@ -9,12 +8,57 @@
 @font-face {
   font-family: 'simvonib';
   src: url('Simvoni-Bold.ttf') format('truetype');
-  /* Add more font formats if needed */
   font-weight: normal;
   font-style: normal;
 }
 
-/* Reset default browser styles */
+:root {
+  /* Default theme colors */
+  --background-color: #ededed;
+  --secondary-background-color: #dedede;
+  --text-color: #333;
+  --primary-color: #d68b00;
+  --secondary-color: #f9a636;
+  --hover-color: #f8a535;
+}
+
+/* Define the four themes */
+.light-theme-1 {
+  --background-color: #ededed;
+  --secondary-background-color: #dedede;
+  --text-color: #000;
+  --primary-color: #f9a636;
+  --secondary-color: #d68b00;
+  --hover-color: #b37100;
+}
+
+.light-theme-2 {
+  --background-color: #ededed;
+  --secondary-background-color: #dedede;
+  --text-color: #000;
+  --primary-color: #4d97ff;
+  --secondary-color: #4179c8;
+  --hover-color: #39639d;
+}
+
+.dark-theme-1 {
+  --background-color: #171717;
+  --secondary-background-color: #000000;
+  --text-color: #ffffff;
+  --primary-color: #f9a636;
+  --secondary-color: #d68b00;
+  --hover-color: #b37100;
+}
+
+.dark-theme-2 {
+  --background-color: #171717;
+  --secondary-background-color: #000000;
+  --text-color: #ffffff;
+  --primary-color: #4d97ff;
+  --secondary-color: #4179c8;
+  --hover-color: #39639d;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -22,7 +66,7 @@
 }
 
 html {
-  background-color: #dedede;
+  background-color: var(--secondary-background-color);
 }
 
 body {
@@ -30,7 +74,7 @@ body {
   max-width: 1000px;
   min-height: 100vh;
   font-family: 'simvoni', sans-serif;
-  background-color: #ededed;
+  background-color: var(--background-color);
   display: flex;
   flex-direction: column;
 }
@@ -39,7 +83,7 @@ body {
 .sticky {
   position: sticky;
   top: 0;
-  background-color: #d68b00;
+  background-color: var(--secondary-color);
   z-index: 100;
 }
 
@@ -71,7 +115,7 @@ img:hover {
 
 /* Header styles */
 header {
-  background-color: #f9a636;
+  background-color: var(--primary-color);
   padding: 20px;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -88,7 +132,7 @@ header img {
 
 /* Navigation bar styles */
 nav {
-  background-color: orange;
+  background-color: var(--secondary-background-color);
   padding: 5px;
   text-align: center;
   font-size: 20px;
@@ -111,7 +155,7 @@ nav a {
 
 nav a:hover {
   color: #fff;
-  background-color: #f8a535;
+  background-color: var(--primary-color);
 }
 
 nav img {
@@ -138,7 +182,7 @@ h1 {
   font-size: 30px;
   margin-bottom: 10px;
   text-align: center;
-  color: #d68b00;
+  color: var(--secondary-color);
   font-family: sans-serif;
 }
 
@@ -149,7 +193,7 @@ h2 {
 p {
   font-size: 20px;
   line-height: 1.5;
-  color: #333;
+  color: var(--text-color);
   text-align: center;
 }
 
@@ -161,7 +205,7 @@ ul,
 ol {
   font-size: 20px;
   line-height: 1.5;
-  color: #333;
+  color: var(--secondary-color);
   text-align: left;
   padding: 20px;
 }
@@ -172,7 +216,7 @@ ol {
 
 /* Footer styles */
 footer {
-  background-color: #d68b00;
+  background-color: var(--secondary-color);
   text-align: center;
   width: 100%;
   align-self: center;
@@ -205,7 +249,7 @@ html {
 
 /* Dropdown styles */
 .dropbtn {
-  background-color: #d68b00;
+  background-color: var(--secondary-color);
   color: white;
   font-size: 20px;
   border: none;
@@ -224,12 +268,12 @@ html {
   display: none;
   position: absolute;
   right: 0;
-  background-color: #d68b00;
+  background-color: var(--secondary-color);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 6px;
-  fill: #d68b00;
+  fill: var(--primary-color);
 }
 
 .dropdown-content a {
@@ -246,7 +290,7 @@ html {
 }
 
 .dropdown-content a:hover {
-  background-color: #f8a535;
+  background-color: var(--primary-color);
 }
 
 .dropdown:hover .dropdown-content {
@@ -254,7 +298,7 @@ html {
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #f8a535;
+  background-color: var(--primary-color);
 }
 
 /* About Us Styles */
@@ -263,7 +307,7 @@ html {
   align-items:center;
   justify-content:flex-start;
   margin-bottom: 30px;
-  background-color: #fff;
+  background-color: var(--secondary-background-color);
   padding: 20px;
   border-radius: 6px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -286,13 +330,13 @@ html {
 .team-member h3 {
   margin: 0 0 10px 0;
   font-size: 24px;
-  color: #333;
+  color: #c63f3f;
 }
 
 .team-member p {
   padding: 10px;
   margin: 0;
-  color: #666;
+  color: var(--text-color);
 }
 
 @media (max-width: 600px) {
@@ -330,6 +374,7 @@ html {
 
 .item h3 {
   margin-top: 5px;
+  color: var(--text-color);
 }
 
 .dis-cont {
@@ -351,28 +396,31 @@ html {
 .dis-cont input[type="text"]:focus,
 .dis-cont input[type="password"]:focus {
   outline: none;
-  border-color: #f9a636;
+  border-color: var(--primary-color);
 }
 
-.dis-cont button {
+button {
   display: inline-block;
-  padding: 10px 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width:100%;
   font-size: 16px;
   text-align: center;
   text-decoration: none;
-  background-color: #d68b00;
+  background-color: var(--secondary-color);
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  max-width: 200px;
 }
 
-.dis-cont button:hover {
-  background-color: #f9a636;
+button:hover {
+  background-color: var(--primary-color);
 }
 
-.dis-cont button:active {
-  background-color: #ab7126;
+button:active {
+  background-color: var(--hover-color);
 }
 
 
