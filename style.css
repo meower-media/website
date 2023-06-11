@@ -332,8 +332,12 @@ html {
   margin-top: 5px;
 }
 
-input[type="text"],
-input[type="password"] {
+.dis-cont {
+  text-align: center;
+}
+
+.dis-cont input[type="text"],
+.dis-cont input[type="password"] {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -344,13 +348,13 @@ input[type="password"] {
   transition: border-color 0.3s ease-in-out;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus {
+.dis-cont input[type="text"]:focus,
+.dis-cont input[type="password"]:focus {
   outline: none;
   border-color: #f9a636;
 }
 
-button {
+.dis-cont button {
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
@@ -363,10 +367,12 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.dis-cont button:hover {
   background-color: #f9a636;
 }
 
-button:active {
+.dis-cont button:active {
   background-color: #ab7126;
 }
+
+
