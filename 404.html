@@ -1,50 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Meower | 404 Page not found</title>
-  <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
-  <link href="/style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="assets/meowy.jpg" type="image/x-icon">
+  <title>Meower | 404</title>
 </head>
-<style>
-  section {
-      background:  rgba(0, 0, 0, 0.3);
-      color: white;
-      border-radius: 1em;
-      padding: 1em;
-      top: 50%;
-      left: 50%;
-      margin: auto;
-      width: 60%;
-      text-align: center;
-      align-self: center;
-      align-content: center; }
-</style>
-<body style="background-image: url('/assets/meowtain-blur.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; text-align: center; align-content: center; background-attachment: fixed;">
-  <br>
-  <section>
-    <a href="/"><img style='height: 50%; width: 50%; object-fit: contain' src="/assets/meowerlogo-white.svg"></a>
-  </section>
-  <br>
-  <section>
-    <a class="nav-links" href="https://app.meower.org">Launch</a> | <a class="nav-links" href="https://old.meower.org">Scratch Client</a> | <a class="nav-links" href="https://github.com/meower-media-co">GitHub</a> | <a class="nav-links" href="https://wiki.meower.org">Wiki</a> | <a class="nav-links" href="https://forums.meower.org">Forums</a> | <a class="nav-links" href="/legal.html">Legal</a>
-  </section>
-  <br>
-  <section>
-    <h1 class="title">404 Page not found</h1>
-    <p class="body">Whoops! Looks like you followed a link that leads to a non-existent page... or you were just looking for cat pics.</p>
-    <br>
-    <img style='height: 50%; width: 50%; object-fit: contain' src="/assets/cat_disks.jpg"/>
-    <br>
-    <a class="white" style='font-size: x-large;' href="/"><u>Go home</u></a>
-  </section>
-  <br>
-  <section>
-    <p class="body">©2020 - <script type="text/javascript">document.write( new Date().getFullYear() );</script> Meower Media.</p>
-    <p class="body">Website redesign by <a class="white" href="https://joshatticus.is-a.dev">JoshAtticus</a></p>
-  </section>
+
+<body>
+  <header>
+    <a href="index.html"><img src="assets/meowerlogo-white.svg" alt="Meower Header"></a>
+  </header>
+
+  <nav class="sticky">
+    <a href="index.html"><img src="icons/home.svg">Home</a>
+    <a href="https://app.meower.org"><img src="icons/rocket.svg">Launch</a>
+    <a href="about.html"><img src="icons/help-circle.svg">About Us</a>
+
+    <div class="dropdown">
+      <button class="dropbtn"><img src="icons/more-horizontal.svg">More</button>
+      <div class="dropdown-content">
+        <a href="https://forums.meower.org/"><img src="icons/users-2.svg">Forums</a>
+        <a href="https://wiki.meower.org/wiki/Home"><img src="icons/book-marked.svg">Wiki</a>
+        <a href="https://github.com/meower-media-co"><img src="icons/github.svg">GitHub</a>
+        <a href="legal.html"><img src="icons/scale.svg">Legal</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+	<!-- 404 page made by the Ducklord -->
+    <section>
+      <h1>404 - Page Not Found</h1>
+      <p>Whoops! It looks like you followed an invalid link... Or, you were just looking for cat pictures.</p>
+	  <br>
+	  <img src="assets/cat_disks.jpg" class="center" style="max-width: 100%;">
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2020 -
+      <script type="text/javascript">document.write(new Date().getFullYear());</script> Meower Media
+    </p>
+    <button class="theme-switcher-button" id="theme-switcher-button"><img src="icons/palette.svg"></button>
+  </footer>
+
+  <!-- Add your script tags for any JavaScript files here -->
+  <script src="themes.js"></script>
+
 </body>
 
 </html>
+
