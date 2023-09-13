@@ -9,12 +9,44 @@
   <title>Meower | Live</title>
 </head>
 
-<body>
-  <h1>Meower Live Tracker</h1>
-  <h2 id='users'>Users: fetching...</h2>
-  <h2 id='posts'>Posts: fetching...</h2>
-  <h2 id='chats'>Chats: fetching...</h2>
-  <script src="script.js"></script>
+<body class="style1">
+  <header>
+    <a href="index.html"><img src="assets/meowerlogo-white.svg" alt="Meower Header"></a>
+  </header>
+
+  <nav class="sticky">
+    <a href="index.html"><img src="icons/home.svg">Home</a>
+    <a href="https://app.meower.org"><img src="icons/rocket.svg">Launch</a>
+    <a href="about.html"><img src="icons/help-circle.svg">About Us</a>
+
+    <div class="dropdown">
+      <button class="dropbtn"><img src="icons/more-horizontal.svg">More</button>
+      <div class="dropdown-content">
+        <a href="https://forums.meower.org/"><img src="icons/users-2.svg">Forums</a>
+        <a href="https://wiki.meower.org/wiki/Home"><img src="icons/book-marked.svg">Wiki</a>
+        <a href="https://github.com/meower-media-co"><img src="icons/github.svg">GitHub</a>
+        <a href="legal.html"><img src="icons/scale.svg">Legal</a>
+        <a href="live.html"><img src="icons/rocket.svg">Live</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <h1>Meower Live Tracker</h1>
+    <h2 id='users'>Users: fetching...</h2>
+    <h2 id='posts'>Posts: fetching...</h2>
+    <h2 id='chats'>Chats: fetching...</h2>
+  </main>
+  <footer>
+    <p>&copy; 2020 -
+      <script type="text/javascript">document.write(new Date().getFullYear());</script> Meower Media
+    </p>
+    <button class="theme-switcher-button" id="theme-switcher-button"><img src="icons/palette.svg"></button>
+  </footer>
+
+  <!-- Add your script tags for any JavaScript files here -->
+  <script src="live.js"></script>
+  <script src="themes.js"></script>
 </body>
 
 </html>
