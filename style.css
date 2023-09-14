@@ -485,6 +485,10 @@ html {
 
 .tick {
   font-size: 30px;
+  line-height: 1.5;
+  color: var(--text-color);
+  text-align: center;
+  font-family: 'simvoni', sans-serif;
 }
 
 button {
