@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet">
   <link rel="shortcut icon" href="icons/meowyicon.svg" type="image/x-icon">
   <title>Meower | Live</title>
 </head>
@@ -33,9 +34,24 @@
 
   <main>
     <h1>Meower Live Tracker</h1>
-    <p id='users' style="font-size: 30px;">Users: fetching...</p>
-    <p id='posts' style="font-size: 30px;">Posts: fetching...</p>
-    <p id='chats' style="font-size: 30px;">Chats: fetching...</p>
+    <div class="tick" id="posts" data-value="fetching...">
+      <div data-repeat="true" aria-hidden="true">
+        Posts:
+        <span data-view="flip"></span>
+      </div>
+    </div>
+    <div class="tick" id="users" data-value="fetching...">
+      <div data-repeat="true" aria-hidden="true">
+        Users:
+        <span data-view="flip"></span>
+      </div>
+    </div>
+    <div class="tick" id="chats" data-value="fetching...">
+      <div data-repeat="true" aria-hidden="true">
+        Chats:
+        <span data-view="flip"></span>
+      </div>
+    </div>
   </main>
   <footer>
     <p>&copy; 2020 -
@@ -46,6 +62,7 @@
 
   <!-- Add your script tags for any JavaScript files here -->
   <script src="live.js"></script>
+  <script src="https://unpkg.com/@pqina/flip/dist/flip.min.js"></script>
   <script src="themes.js"></script>
 </body>
 
