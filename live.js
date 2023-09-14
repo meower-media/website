@@ -65,7 +65,7 @@ function getStats() {
     else {
       addLoop(json.chats, parseInt(document.getElementById("chats").textContent.split("Chats: ")[1], 10), "chats");
     }
-    setTimeout(getStats, 10000)
+    setTimeout(getStats, 5000)
   })
 }
 
