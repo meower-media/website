@@ -41,7 +41,7 @@ function getStats() {
   getFetch("https://api.meower.org/statistics").then((results) => {
     json = results;
 
-    if (document.getElementById("posts").getAttribute("data-value") == "fetching...") {
+    if (document.getElementById("posts").getAttribute("data-value") == "------") {
       document.getElementById("posts").setAttribute("data-value", json.posts);
       document.getElementById("users").setAttribute("data-value", json.users);
       document.getElementById("chats").setAttribute("data-value", json.chats);
