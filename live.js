@@ -24,13 +24,13 @@ function addLoop(amt, index, type) {
     i++;
     if (i <= amt) {
       if (type == "posts") {
-        document.getElementById(type).textContent = `Posts: ${i}`;
+        document.getElementById(type).setAttribute("data-value", i);
       }
       if (type == "users") {
-        document.getElementById(type).textContent = `Users: ${i}`;
+        document.getElementById(type).setAttribute("data-value", i);
       }
       if (type == "chats") {
-        document.getElementById(type).textContent = `Chats: ${i}`;
+        document.getElementById(type).setAttribute("data-value", i);
       }
       addLoop(amt, i, type)
     }
@@ -41,15 +41,15 @@ function getStats() {
   getFetch("https://api.meower.org/statistics").then((results) => {
     json = results;
 
-    if (document.getElementById("posts").textContent == "Posts: fetching...") {
-      document.getElementById("posts").textContent = `Posts: ${json.posts}`;
-      document.getElementById("users").textContent = `Users: ${json.users}`;
-      document.getElementById("chats").textContent = `Chats: ${json.chats}`;
+    if (document.getElementById("posts").getAttribute("data-value") == "fetching...") {
+      document.getElementById("posts").setAttribute("data-value", json.posts);
+      document.getElementById("users").setAttribute("data-value", json.users);
+      document.getElementById("chats").setAttribute("data-value", json.chats);
     }
     else {
-      addLoop(json.posts, parseInt(document.getElementById("posts").textContent.split("Posts: ")[1], 10), "posts");
-      addLoop(json.users, parseInt(document.getElementById("users").textContent.split("Users: ")[1], 10), "users");
-      addLoop(json.chats, parseInt(document.getElementById("chats").textContent.split("Chats: ")[1], 10), "chats");
+      addLoop(json.posts, parseInt(document.getElementById("posts").getAttribute("data-value"), 10), "posts");
+      addLoop(json.users, parseInt(document.getElementById("users").getAttribute("data-value"), 10), "users");
+      addLoop(json.chats, parseInt(document.getElementById("chats").getAttribute("data-value"), 10), "chats");
     }
     setTimeout(getStats, 2000)
   })
