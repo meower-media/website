@@ -479,6 +479,14 @@ html {
   border-color: var(--primary-color);
 }
 
+.tick-credits {
+  display: none;
+}
+
+.tick {
+  font-size: 30px;
+}
+
 button {
   display: inline-block;
   padding-top: 10px;
