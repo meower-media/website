@@ -96,7 +96,7 @@ body {
 img {
   opacity: 0;
   animation: fade-in 0.5s ease-in-out forwards;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 img:hover {
@@ -198,7 +198,6 @@ p {
   font-size: 20px;
   line-height: 1.5;
   color: var(--text-color);
-  text-align: center;
 }
 
 ul {
@@ -408,7 +407,6 @@ html {
 }
 
 .team-member h3 {
-  margin: 0 0 10px 0;
   font-size: 24px;
   color: #c63f3f;
 }
@@ -443,6 +441,7 @@ html {
 .item {
   text-align: center;
   margin: 10px;
+  width: 155px;
 }
 
 .item img {
