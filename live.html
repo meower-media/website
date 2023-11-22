@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="assets/meowy.jpg" type="image/x-icon">
-  <title>Meower | 404</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="icons/meowyicon.svg" type="image/x-icon">
+  <title>Meower | Live</title>
 </head>
 
-<body>
+<body class="style1">
   <header>
     <a href="index.html"><img src="assets/meowerlogo-white.svg" alt="Meower Header"></a>
   </header>
@@ -26,18 +27,36 @@
         <a href="https://wiki.meower.org/wiki/Home"><img src="icons/book-marked.svg">Wiki</a>
         <a href="https://github.com/meower-media-co"><img src="icons/github.svg">GitHub</a>
         <a href="legal.html"><img src="icons/scale.svg">Legal</a>
-	<a href="live.html"><img src="icons/bar-chart.svg">Live</a>
+        <a href="live.html"><img src="icons/bar-chart.svg">Live</a>
       </div>
     </div>
   </nav>
 
   <main>
-	<!-- 404 page made by the Ducklord -->
+    <h1>Meower Live Tracker</h1>
     <section>
-      <h1>404 - Page Not Found</h1>
-      <p>Whoops! It looks like you followed an invalid link... Or, you were just looking for cat pictures.</p>
-	  <br>
-	  <img src="assets/cat_disks.jpg" class="center" style="max-width: 100%;">
+      <div class="tick" id="posts" data-value="------">
+        <div data-repeat="true" aria-hidden="true">
+          Posts: 
+          <span data-view="flip"></span>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="tick" id="users" data-value="------">
+        <div data-repeat="true" aria-hidden="true">
+          Users:
+          <span data-view="flip"></span>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="tick" id="chats" data-value="------">
+        <div data-repeat="true" aria-hidden="true">
+          Chats:
+          <span data-view="flip"></span>
+        </div>
+      </div>
     </section>
   </main>
   <footer>
@@ -48,9 +67,9 @@
   </footer>
 
   <!-- Add your script tags for any JavaScript files here -->
+  <script src="live.js"></script>
+  <script src="https://unpkg.com/@pqina/flip/dist/flip.min.js"></script>
   <script src="themes.js"></script>
-
 </body>
 
 </html>
-

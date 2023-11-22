@@ -478,6 +478,26 @@ html {
   border-color: var(--primary-color);
 }
 
+.tick-credits {
+  display: none;
+}
+
+.tick {
+  font-size: 30px;
+  line-height: 1.5;
+  color: var(--text-color);
+  text-align: center;
+  font-family: 'simvoni', sans-serif;
+}
+
+.tick-flip-panel {
+   background-color: var(--background-color) !important; 
+}
+
+.tick-flip-panel {
+   color: var(--text-color) !important; 
+}
+
 button {
   display: inline-block;
   padding-top: 10px;
