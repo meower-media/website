@@ -179,22 +179,36 @@ section {
 }
 
 a {
+  font-family: 'simvoni';
+  color: inherit;
+}
+
+b {
+  font-family: 'simvonib';
   color: inherit;
 }
 
 h1 {
   font-size: 30px;
   margin-bottom: 10px;
-  text-align: center;
+  text-align: left;
   color: var(--secondary-color);
-  font-family: sans-serif;
+  font-family: 'simvonib';
 }
 
 h2 {
-  font-family: sans-serif;
+  font-family: 'simvonib';
+  text-align: left;
+  color: var(--text-color);
 }
 
 p {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+li {
   font-size: 20px;
   line-height: 1.5;
   color: var(--text-color);
@@ -483,6 +497,7 @@ button {
   padding-top: 10px;
   padding-bottom: 10px;
   width:100%;
+  font-family: 'simvoni';
   font-size: 16px;
   text-align: center;
   text-decoration: none;
