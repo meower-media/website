@@ -462,6 +462,7 @@ html {
 .item h3 {
   margin-top: 5px;
   color: var(--text-color);
+  text-align: center;
 }
 
 .dis-cont {
