@@ -13,7 +13,6 @@
 }
 
 :root {
-  /* Default theme colors */
   --background-color: #ededed;
   --secondary-background-color: #dedede;
   --text-color: #333;
@@ -22,7 +21,6 @@
   --hover-color: #f8a535;
 }
 
-/* Define the four themes */
 .light-theme-1 {
   --background-color: #ededed;
   --secondary-background-color: #dedede;
@@ -79,7 +77,6 @@ body {
   flex-direction: column;
 }
 
-/* Sticky navigation bar */
 .sticky {
   position: sticky;
   top: 0;
@@ -92,7 +89,6 @@ body {
   margin-right: 5px;
 }
 
-/* Image loading animations */
 img {
   opacity: 0;
   animation: fade-in 0.5s ease-in-out forwards;
@@ -113,7 +109,6 @@ img:hover {
   }
 }
 
-/* Header styles */
 header {
   background-color: var(--primary-color);
   padding: 20px;
@@ -130,7 +125,6 @@ header img {
   height: auto;
 }
 
-/* Navigation bar styles */
 nav {
   background-color: var(--secondary-background-color);
   padding: 5px;
@@ -168,7 +162,6 @@ nav p {
   font-size: 18px;
 }
 
-/* Main content styles */
 main {
   padding: 20px;
   flex-grow: 1;
@@ -243,7 +236,6 @@ ol {
   text-align: left;
 }
 
-/* Footer styles */
 footer {
   background-color: var(--secondary-color);
   display: flex;
@@ -255,14 +247,14 @@ footer {
   align-self: center;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
-  padding: 5px; /* add padding to avoid content sticking to the edge when wrapping */
+  padding: 5px;
 }
 
 footer p {
   font-size: 14px;
   color: #ffffff;
   padding: 5px;
-  margin: 5px; /* add margin to give space between text and button */
+  margin: 5px;
 }
 
 footer button {
@@ -271,8 +263,8 @@ footer button {
   cursor: pointer;
   padding: 5px;
   margin: 5px;
-  width: 32px;  /* adjust these as needed */
-  height: 32px; /* adjust these as needed */
+  width: 32px;
+  height: 32px;
 }
 
 footer button img {
@@ -280,9 +272,6 @@ footer button img {
   height: 100%;
 }
 
-
-
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
@@ -299,7 +288,6 @@ html {
   }
 }
 
-/* Dropdown styles */
 .dropbtn {
   background-color: var(--secondary-color);
   color: white;
@@ -406,7 +394,6 @@ html {
   background-color: var(--primary-color);
 }
 
-/* About Us Styles */
 .team-member {
   display: flex;
   align-items:center;
@@ -456,7 +443,6 @@ html {
   }
 }
 
-/* Moderator Styles */
 .moderators {
   display: flex;
   flex-wrap: wrap;
@@ -465,9 +451,9 @@ html {
 }
 
 .item {
-  text-align: center;
-  margin: 10px;
-  width: 155px;
+  text-align:center;
+  margin:10px;
+  width:185px;
 }
 
 .item img {
