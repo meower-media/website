@@ -1,7 +1,7 @@
 ID: 7344
 
-Domains:
-app.meower.org,meower.org,webhooks.meower.org
+Domains: 
+app.meower.org,meower.org
 
 Document-Name: Terms Of Service
 Url: https://meower.org/legal
