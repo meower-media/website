@@ -1,84 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="icons/meowyicon.svg" type="image/x-icon">
-  <title>Meower | Home</title>
-  <script src="https://meower.org/announcement.js" async="async" type="text/javascript"></script>
-  <link type="text/css" rel="stylesheet" href="https://meower.org/announcement.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meower</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="icon" href="images/assets/meowy.svg">
+    <link rel="canonical" href="https://meower.org">
+    <link rel="apple-touch-icon" sizes="512x512" href="images/assets/safari-touch-512.png">
+    <meta property="og:image" content="images/assets/safari-touch-512.png">
+
+    <meta name="theme-color" content="#181818">
+    <meta name="background-color" content="#181818">
+    <meta name="apple-mobile-web-app-title" content="Meower">
+    <meta property="og:title" content="Meower">
+
+    <meta name="description" content="
+    Meower is an innovative non-profit and open-source social media platform that prioritizes user privacy by never selling your data, never collecting more than we need to, and never displaying ads.
+    ">
+    <meta property="og:description" content="
+    Meower is an innovative non-profit and open-source social media platform that prioritizes user privacy by never selling your data, never collecting more than we need to, and never displaying ads.
+    ">
+    <meta name="keywords" content="miau, Meower, meo, Roarer, Meower Svelte, Meower clients, PWA, web clients, social media, Discord, instant message, chatroom">
+    <meta name="author" content="Meower Media">
+    <meta property="og:title" content="Meower">
+    <meta property="og:url" content="https://meower.org">
 </head>
-<body class="style1">
-  <header>
-    <a href="index.html"><img src="assets/meowerlogo-white.svg" alt="Meower Header"></a>
-  </header>
-
-  <nav class="sticky">
-    <a href="index.html"><img src="icons/home.svg">Home</a>
-    <a href="https://app.meower.org"><img src="icons/rocket.svg">Launch</a>
-    <a href="about.html"><img src="icons/help-circle.svg">About Us</a>
-
-    <div class="dropdown">
-      <button class="dropbtn"><img src="icons/more-horizontal.svg">More</button>
-      <div class="dropdown-content">
-        <a href="https://github.com/meower-media-co"><img src="icons/github.svg">GitHub</a>
-        <a href="legal.html"><img src="icons/scale.svg">Legal</a>
-      </div>
+<body>
+    <div class="page">
+        <div class="hero">
+            <div class="carousel">
+                <div class="banner" style="--image: url(images/banners/meo_hd.png)">
+                    <div class="banner-image"></div>
+                    <div class="banner-text">
+                        <span class="banner-text-header">meo</span>
+                        <span class="banner-text-subheader">Imagine a Meower client...</span>
+                    </div>
+                    <div class="banner-launch">
+                        <a class="banner-jump" href="https://eris.pages.dev/meo/about" target="_blank">
+                            <span>Homepage</span>
+                            <img src="images/icons/jump.svg" width="20px" alt="icon">
+                        </a>
+                    </div>
+                </div>
+                <div class="banner" style="--image: url(images/banners/roarer_hd.png)">
+                    <div class="banner-image"></div>
+                    <div class="banner-text">
+                        <span class="banner-text-header">Roarer</span>
+                        <span class="banner-text-subheader">A simple mobile-friendly Meower client. </span>
+                    </div>
+                    <div class="banner-launch">
+                        <a class="banner-jump" href="https://mybearworld.github.io/roarer/" target="_blank">
+                            <span>Launch</span>
+                            <img src="images/icons/rocket.svg" width="20px" alt="icon">
+                        </a>
+                    </div>
+                </div>
+                <div class="banner" style="--image: url(images/banners/svelte_hd.png)">
+                    <div class="banner-image"></div>
+                    <div class="banner-text">
+                        <span class="banner-text-header">Meower Svelte</span>
+                        <span class="banner-text-subheader">The main Meower client, written in Svelte.</span>
+                    </div>
+                    <div class="banner-launch">
+                        <a class="banner-jump" href="https://app.meower.org/" target="_blank">
+                            <span>Launch</span>
+                            <img src="images/icons/rocket.svg" width="20px" alt="icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-header home">
+                <div class="header-logo">
+                    <a href="">
+                        <img src="images/meowerlogo-white.svg" width="200px" alt="meower">
+                        <span style="display: none;">Meower</span>
+                    </a>
+                </div>
+                <div class="header-links">
+                    <a class="header-link" href="https://app.meower.org"><img src="images/icons/rocket.svg" width="20px" alt="icon"><span>Launch</span></a>
+                    <a class="header-link" href="about"><img src="images/icons/help-circle.svg" width="20px" alt="icon"><span>About</span></a>
+                    <a class="header-link" href="legal"><img src="images/icons/scale.svg" width="20px" alt="icon"><span>Legal</span></a>
+                    <a class="header-link" href="https://github.com/meower-media-co" target="_blank"><img src="images/icons/github.svg" width="20px" alt="icon"><span>Github</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="welcome">
+                <span class="span-header">
+                    Welcome!
+                </span>
+                <span class="welcome-sub">
+                    Meower is an innovative non-profit and open-source social media platform that prioritizes user privacy by never selling your data, never collecting more than we need to, and never displaying ads.
+                </span>
+                <span class="welcome-sub">
+                    With lots of clients to choose from, you can join our community today and start connecting with like-minded individuals.
+                </span>
+            </div>
+            <span class="span-header">Clients</span>
+            <span class="span-p">Explore our diverse range of Meower clients</span>
+            <div class="clients">
+                <div class="client-sec" style="--border: #765dee;">
+                    <span class="span-header">meo</span>
+                    <span class="span-subheader">The fastest, most mobile-friendly, and some other third thing client there is!</span>
+                    <div class="supports">
+                        <span class="badge">Web</span>
+                        <span class="badge">PWA</span>
+                        <span class="badge" style="display: none;">Windows</span>
+                    </div>
+                    <a class="client-jump" href="https://eris.pages.dev/meo/about" target="_blank">
+                        <span>Homepage</span>
+                        <img src="images/icons/jump.svg" width="20px" alt="icon">
+                    </a>
+                </div>
+                <div class="client-sec" style="--border: #3a5073;">
+                    <span class="span-header">Roarer</span>
+                    <span class="span-subheader">A simple mobile-friendly Meower client.</span>
+                    <div class="supports">
+                        <span class="badge">Web</span>
+                    </div>
+                    <a class="client-jump" href="https://mybearworld.github.io/roarer/" target="_blank">
+                        <span>Launch</span>
+                        <img src="images/icons/rocket.svg" width="20px" alt="icon">
+                    </a>
+                </div>
+                <div class="client-sec" style="--border: var(--accent);">
+                    <span class="span-header">Meower Svelte</span>
+                    <span class="span-subheader">The main Meower client, written in Svelte.</span>
+                    <div class="supports">
+                        <span class="badge">Web</span>
+                    </div>
+                    <a class="client-jump" href="https://app.meower.org/" target="_blank">
+                        <span>Launch</span>
+                        <img src="images/icons/rocket.svg" width="20px" alt="icon">
+                    </a>
+                </div>
+                <div class="client-sec" style="--border: #5a576e">
+                    <span class="span-header">Meower Bare Bones</span>
+                    <span class="span-subheader">A barebones meower client</span>
+                    <div class="supports">
+                        <span class="badge">Web</span>
+                    </div>
+                    <a class="client-jump" href="https://meower-barebones-v2.pages.dev/home" target="_blank">
+                        <span>Launch</span>
+                        <img src="images/icons/rocket.svg" width="20px" alt="icon">
+                    </a>
+                </div>
+                <div class="client-sec" style="--border: #8bb775">
+                    <span class="span-header">Leo</span>
+                    <span class="span-subheader">A fork of meo</span>
+                    <div class="supports">
+                        <span class="badge">Web</span>
+                        <span class="badge">PWA</span>
+                    </div>
+                    <a class="client-jump" href="https://leo.atticat.tech/" target="_blank">
+                        <span>Launch</span>
+                        <img src="images/icons/rocket.svg" width="20px" alt="icon">
+                    </a>
+                </div>
+                <div class="client-sec" style="--border: #0d6efd">
+                    <span class="span-header">Jeow</span>
+                    <span class="span-subheader">Jeow is a Meower client made with Bootstrap and jQuery.</span>
+                    <div class="supports">
+                        <span class="badge">Web</span>
+                    </div>
+                    <a class="client-jump" href="https://mybearworld.github.io/jeow/" target="_blank">
+                        <span>Launch</span>
+                        <img src="images/icons/rocket.svg" width="20px" alt="icon">
+                    </a>
+                </div>
+            </div>
+            <span class="span-header">Dead Clients</span>
+            <span class="span-p">Clients that are no longer maintained (likely non-functional)</span>
+            <div class="clients">
+                <div class="client-sec" style="--border: #33d17a">
+                    <span class="span-header">BetterMeower</span>
+                    <span class="span-subheader"> The Meower you know and love; improved</span>
+                    <div class="supports">
+                        <span class="badge">🪦</span>
+                    </div>
+                    <a class="client-jump" href="https://classic.bettermeower.app/" target="_blank">
+                        <span>Launch</span>
+                        <img src="images/icons/rocket.svg" width="20px" alt="icon">
+                    </a>
+                </div>
+                <div class="client-sec" style="--border: #fe7311">
+                    <span class="span-header">Meower Vanilla</span>
+                    <span class="span-subheader">Meower-Vanilla was the original, Scratch-based client for Meower.</span>
+                    <div class="supports">
+                        <span class="badge">🪦</span>
+                    </div>
+                    <a class="client-jump" href="https://github.com/meower-media-co/Meower-Vanilla" target="_blank">
+                        <span>Github</span>
+                        <img src="images/icons/github.svg" width="20px" alt="icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-logo">
+                <a href="">
+                    <img src="images/meowerlogo-white.svg" width="200px" alt="meower">
+                    <span style="display: none;">Meower</span>
+                </a>
+                <span>© 2020 - 2024 Meower Media </span>
+            </div>
+            <div class="footer-links">
+                <div class="link-sec">
+                    <span class="span-h3">Developers</span>
+                    <a href="https://docs.meower.org/" target="_blank">Docs</a>
+                    <a href="https://github.com/meower-media-co" target="_blank">Github</a>
+                    <a href="https://status.meower.org/" target="_blank">Status</a>
+                    <a href="https://github.com/meower-media-co/Meower.js" target="_blank">Meower.js</a>
+                    <a href="https://github.com/MikeDev101/cloudlink" target="_blank">CloudLink</a>
+                </div>
+                <div class="link-sec">
+                    <span class="span-h3">App</span>
+                    <a href="">Homepage</a>
+                    <a href="about">About</a>
+                    <a href="legal">Legal</a>
+                    <a href="export">Data Export</a>
+                    <a href="mailto:support@meower.org">Contact</a>
+                </div>
+            </div>
+        </div>
     </div>
-  </nav>
-
-  <main>
-
-  
-    <section>
-      <h1>Welcome!</h1>
-      <p>Meower is an innovative non-profit and open-source social media platform that prioritizes user privacy by never
-          selling your data, never collecting more than we need to, and never displaying ads. Join our community today and
-            start connecting with like-minded individuals.</p>
-    </section>
-
-    <section>
-      <h1>Safe for All</h1>
-      <p>A friendly place to be. We are committed to keeping Meower safe and welcoming for <em>all</em>. Our dedicated
-        team works tirelessly to enforce community guidelines and ensure a positive experience for everyone.</p>
-    </section>
-
-    <section>
-      <h1>Original</h1>
-      <p>Meower started life as a Scratch 3.0-based social media platform. We have a long history, too! With the
-        continuous support of our amazing community, we've evolved into a feature-rich platform for creators of all
-        kinds.
-    </section>
-
-    <section>
-      <h1>Open-Source</h1>
-      <p>Transparency is at the core of Meower. We believe in the power of open-source collaboration. Anyone is welcome
-        to contribute, fork, or view the Meower source code on our <a
-          href="https://github.com/meower-media-co">GitHub</a> repository. Together, we can build a better platform for
-        all.</p>
-    </section>
-
-    <section>
-      <h1>Join the Community</h1>
-      <p>Are you ready to join a vibrant community of creators and enthusiasts? <a href="https://app.meower.org"
-          class="btn">Sign up</a> for a Meower account today and
-        start sharing your ideas, creations, and stories with the world. Let your voice be heard and connect with fellow
-        Meowers!</p>
-    </section>
-
-  </main>
-  <footer>
-    <p>&copy; 2020 -
-      <script type="text/javascript">document.write(new Date().getFullYear());</script> Meower Media
-    </p>
-    <button class="theme-switcher-button" id="theme-switcher-button"><img src="icons/palette.svg"></button>
-  </footer>
-
-  <!-- Add your script tags for any JavaScript files here -->
-  <script src="themes.js"></script>
-
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const carousel = document.querySelector('.carousel');
+        const banners = document.querySelectorAll('.banner');
+        let index = 0;
+
+        const slide = () => {
+            index++;
+            if (index >= banners.length) {
+                index = 0;
+            }
+            carousel.scrollTo({
+                left: banners[index].offsetLeft,
+                behavior: 'smooth'
+            });
+        };
+
+        setInterval(slide, 5000);
+    });
+</script>
 
 </html>

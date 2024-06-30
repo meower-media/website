@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meower | Discord</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../fonts.css">
+    <link rel="icon" href="../images/assets/meowy.svg">
+    <link rel="canonical" href="https://meower.org">
+    <link rel="apple-touch-icon" sizes="512x512" href="../images/assets/safari-touch-512.png">
+    <meta property="og:image" content="images/assets/safari-touch-512.png">
+
+    <meta name="theme-color" content="#181818">
+    <meta name="background-color" content="#181818">
+    <meta name="apple-mobile-web-app-title" content="Meower">
+    <meta property="og:title" content="Meower">
+
+    <meta name="description" content="Link your discord account to Meower!">
+    <meta property="og:description" content="Link your discord account to Meower!">
+    <meta name="keywords" content="miau, Meower, meo, Roarer, Meower Svelte, Meower clients, PWA, web clients, social media, Discord, instant message, chatroom">
+    <meta name="author" content="Meower Media">
+    <meta property="og:title" content="Meower">
+    <meta property="og:url" content="https://meower.org">
+</head>
+<body>
+    <div class="page">
+        <div class="hero">
+            <div class="hero-header">
+                <div class="header-logo">
+                    <a href="../">
+                        <img src="../images/meowerlogo-white.svg" width="200px" alt="meower">
+                        <span style="display: none;">Meower</span>
+                    </a>
+                </div>
+                <div class="header-links">
+                    <a class="header-link" href="https://app.meower.org"><img src="../images/icons/rocket.svg" width="20px" alt="icon"><span>Launch</span></a>
+                    <a class="header-link" href="../about"><img src="../images/icons/help-circle.svg" width="20px" alt="icon"><span>About</span></a>
+                    <a class="header-link" href="../legal"><img src="../images/icons/scale.svg" width="20px" alt="icon"><span>Legal</span></a>
+                    <a class="header-link" href="https://github.com/meower-media-co" target="_blank"><img src="../images/icons/github.svg" width="20px" alt="icon"><span>Github</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="discord-sec" style="--border: #5865f2">
+                <div class="content" id="loginForm">
+                  <span class="span-header">Link your Meower account to your Discord account</span>
+                    <span>
+                        To link your Meower account to your Discord account, just login below!<br>If you don't have a Meower account click <a href="https://app.meower.org" target="_blank">here</a> to open Meower and create one!
+                    </span>
+                  <form>
+                    <label for="username">Username</label>
+                    <input class="input" type="text" id="username">
+                    <label for="password">Password</label>
+                    <input class="input" type="password" id="password">
+                    <button class="button" type="button" id="submit" onclick="login();">Login and Link</button>
+                  </form>
+                </div>
+                <div class="content" id="errorDialog" style="display: none;">
+                  <span class="span-header">Me-owch! We ran into an error.</span>
+                  <div class="meower-info" id="errorText"></div>
+                </div>
+                <div class="content" id="successDialog" style="display: none;">
+                  <span class="span-header">Successfully Linked!</span>
+                  <div class="meower-info">
+                    <span class="span-p">Well done! You have successfully linked your Meower account to your Discord account.</span>
+                    <span class="span-p">You may close this window.</span>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="footer">
+            <div class="footer-logo">
+                <a href="../">
+                    <img src="../images/meowerlogo-white.svg" width="200px" alt="meower">
+                    <span style="display: none;">Meower</span>
+                </a>
+                <span>© 2020 - 2024 Meower Media </span>
+            </div>
+            <div class="footer-links">
+                <div class="link-sec">
+                    <span class="span-h3">Developers</span>
+                    <a href="https://docs.meower.org/" target="_blank">Docs</a>
+                    <a href="https://github.com/meower-media-co" target="_blank">Github</a>
+                    <a href="https://status.meower.org/" target="_blank">Status</a>
+                    <a href="https://github.com/meower-media-co/Meower.js" target="_blank">Meower.js</a>
+                    <a href="https://github.com/MikeDev101/cloudlink" target="_blank">CloudLink</a>
+                </div>
+                <div class="link-sec">
+                    <span class="span-h3">App</span>
+                    <a href="../">Homepage</a>
+                    <a href="../about">About</a>
+                    <a href="../legal">Legal</a>
+                    <a href="../export">Data Export</a>
+                    <a href="mailto:support@meower.org">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    class Cloudlink {
+      constructor(server) {
+        this.events = {};
+        this.ws = new WebSocket(server);
+        this.ws.onopen = async () => {
+          this.send({
+            cmd: 'direct',
+            val: {cmd: 'type', val: 'js'},
+          });
+          this.emit('connected');
+        };
+        this.ws.onmessage = (socketdata) => {
+          var data = JSON.parse(socketdata.data);
+          this.emit(data.cmd, data);
+        };
+        this.ws.onclose = () => {
+          this.emit('disconnected');
+        };
+        this.ws.onerror = (e) => {
+          this.emit('error', e);
+        };
+      }
+      send(data) {
+        this.ws.send(JSON.stringify(data));
+      }
+      on(event, cb) {
+        if (typeof this.events[event] !== 'object')
+          this.events[event] = [];
+        this.events[event].push(cb);
+      }
+      emit(event, data) {
+        if (typeof this.events[event] !== 'object')
+          return;
+        this.events[event].forEach((cb) => cb(data));
+      }
+      disconnect() {
+        this.ws.close();
+      }
+    }
+
+    function error(errorDetails) {
+      if (document.getElementById("errorDialog").style.display == "none" && document.getElementById("successDialog").style.display == "none") {
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("errorDialog").style.display = "block";
+        document.getElementById("errorText").innerText = errorDetails;
+        cljs.ws.close();
+      }
+    }
+
+    function login() {
+      document.getElementById("submit").disabled = true;
+      document.getElementById("submit").innerText = "Connecting...";
+      window.cljs = new Cloudlink("wss://server.meower.org");
+      cljs.on('connected', () => {
+        document.getElementById("submit").innerText = "Authenticating...";
+        cljs.send({cmd: "direct", val: "meower", listener: "trustCheck"})
+      });
+      cljs.on('statuscode', (data) => {
+        if (data.val != "I:100 | OK" && data.val != "I:112 | Trusted Access enabled") {
+          error(`CloudLink Error: ${data.val}`);
+        } else if (data.val == "I:100 | OK" && data.listener == "trustCheck") {
+          cljs.send({cmd: "direct", val: {cmd: "authpswd", val: {username: document.getElementById("username").value, pswd: document.getElementById("password").value}}, listener: "auth"})
+        } else if (data.val == "I:100 | OK" && data.listener == "auth") {
+          document.getElementById("submit").innerText = "Verifying...";
+          const queryString = window.location.search;
+          const urlParams = new URLSearchParams(queryString);
+          cljs.send({cmd: "pvar", id: "Discord", name: "discord", val: urlParams.get('token')})
+        }
+      });
+      cljs.on('pvar', (data) => {
+        if (data.origin == "Discord" && data.name == "discord") {
+          if (data.val == "I:100 | OK") {
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("successDialog").style.display = "block";
+            cljs.ws.close();
+          } else {
+            error(`Auth Bot Error: ${data.val}`);
+          }
+        }
+      });
+      cljs.on('ulist', (data) => {
+        if (data.val.includes("Discord") == false) {
+          error("Auth Bot Error: AUTH_BOT_OFFLINE");
+        }
+      });
+      cljs.on('disconnected', () => {
+        error("CloudLink Error: LOST_CONNECTION");
+      });
+    }
+  </script>
+</html>

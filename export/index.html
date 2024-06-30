@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meower | Data Export</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../fonts.css">
+    <link rel="icon" href="../images/assets/meowy.svg">
+    <link rel="canonical" href="https://meower.org">
+    <link rel="apple-touch-icon" sizes="512x512" href="../images/assets/safari-touch-512.png">
+    <meta property="og:image" content="images/assets/safari-touch-512.png">
+
+    <meta name="theme-color" content="#181818">
+    <meta name="background-color" content="#181818">
+    <meta name="apple-mobile-web-app-title" content="Meower">
+    <meta property="og:title" content="Meower">
+
+    <meta name="description" content="Export your Meower account data.">
+    <meta property="og:description" content="Export your Meower account data.">
+    <meta name="keywords" content="miau, Meower, meo, Roarer, Meower Svelte, Meower clients, PWA, web clients, social media, Discord, instant message, chatroom">
+    <meta name="author" content="Meower Media">
+    <meta property="og:title" content="Meower">
+    <meta property="og:url" content="https://meower.org">
+</head>
+<body>
+    <div class="page">
+        <div class="hero">
+            <div class="hero-header">
+                <div class="header-logo">
+                    <a href="../">
+                        <img src="../images/meowerlogo-white.svg" width="200px" alt="meower">
+                        <span style="display: none;">Meower</span>
+                    </a>
+                </div>
+                <div class="header-links">
+                    <a class="header-link" href="https://app.meower.org"><img src="../images/icons/rocket.svg" width="20px" alt="icon"><span>Launch</span></a>
+                    <a class="header-link" href="../about"><img src="../images/icons/help-circle.svg" width="20px" alt="icon"><span>About</span></a>
+                    <a class="header-link" href="../legal"><img src="../images/icons/scale.svg" width="20px" alt="icon"><span>Legal</span></a>
+                    <a class="header-link" href="https://github.com/meower-media-co" target="_blank"><img src="../images/icons/github.svg" width="20px" alt="icon"><span>Github</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="discord-sec" style="--border: #4999d6">
+                <span class="span-header">Meower Data Exporter</span>
+                <span>
+                    This tools utilizes Meower's new data exporter to be able to download an export of your account's data.
+                    <br>
+                    You can only request one export every 7 days.
+                </span>
+                <form id="login">
+                    <label for="username">Username</label>
+                    <input class="input" type="text" id="username">
+                    <label for="password">Password</label>
+                    <input class="input" type="password" id="password">
+                    <button class="button" type="submit">Login and Export</button>
+                </form>
+                <div id="status" hidden="">
+                    <h4 id="title"></h4>
+                    <span id="desc"></span>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-logo">
+                <a href="../">
+                    <img src="../images/meowerlogo-white.svg" width="200px" alt="meower">
+                    <span style="display: none;">Meower</span>
+                </a>
+                <span>© 2020 - 2024 Meower Media </span>
+            </div>
+            <div class="footer-links">
+                <div class="link-sec">
+                    <span class="span-h3">Developers</span>
+                    <a href="https://docs.meower.org/" target="_blank">Docs</a>
+                    <a href="https://github.com/meower-media-co" target="_blank">Github</a>
+                    <a href="https://status.meower.org/" target="_blank">Status</a>
+                    <a href="https://github.com/meower-media-co/Meower.js" target="_blank">Meower.js</a>
+                    <a href="https://github.com/MikeDev101/cloudlink" target="_blank">CloudLink</a>
+                </div>
+                <div class="link-sec">
+                    <span class="span-h3">App</span>
+                    <a href="../">Homepage</a>
+                    <a href="../about">About</a>
+                    <a href="../legal">Legal</a>
+                    <a href="../export">Data Export</a>
+                    <a href="mailto:support@meower.org">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("login").addEventListener("submit", ev => {
+            ev.preventDefault();
+                
+            document.getElementById("login").hidden = true;
+            document.getElementById("status").hidden = false;
+
+            document.getElementById("title").innerText = "Connecting";
+            document.getElementById("desc").innerText = "Connecting to CloudLink server...";
+
+            const ws = new WebSocket("wss://server.meower.org");
+            ws.addEventListener("open", () => {
+                document.getElementById("title").innerText = "Authenticating";
+                document.getElementById("desc").innerText = "Logging in to CL server...";
+
+                ws.send(JSON.stringify({cmd: "authpswd", val: {username: ev.target[0].value, pswd: ev.target[1].value}}));
+                ws.addEventListener("message", async msg => {
+                    const parsedMsg = JSON.parse(msg.data);
+
+                    if (parsedMsg.listener === "auth" && parsedMsg.cmd === "statuscode" && parsedMsg.val !== "I:100 | OK") {
+                        document.getElementById("title").innerText = "Error";
+                        document.getElementById("desc").innerText = `Failed logging in to CL server: ${parsedMsg.val}`;
+                        ws.close();
+                        return;
+                    }
+
+                    if (parsedMsg.cmd === "direct" && parsedMsg.val.mode === "auth") {
+                        document.getElementById("title").innerText = "Requesting";
+                        document.getElementById("desc").innerText = "Requesting data export...";
+                        try {
+                            const resp = await fetch("https://api.meower.org/me/export", {
+                                method: "POST",
+                                headers: {token: parsedMsg.val.payload.token},
+                            });
+                            if (!resp.ok && resp.status !== 429) throw new Error(`HTTP status code is not OK; HTTP status code is ${resp.status}`);
+                        } catch (e) {
+                            document.getElementById("title").innerText = "Error";
+                            document.getElementById("desc").innerText = `Failed requesting data export: ${e}`;
+                            ws.close();
+                            return;
+                        }
+
+                        document.getElementById("title").innerText = "Waiting";
+                        document.getElementById("desc").innerText = "Waiting for data export to complete...";
+                        const iv = setInterval(async () => {
+                            const resp = await fetch("https://api.meower.org/me/export", {
+                                method: "GET",
+                                headers: {token: parsedMsg.val.payload.token},
+                            });
+                            const exportId = (await resp.json())._id;
+                            if (exportId) {
+                                const downloadLink = `https://uploads.meower.org/data-exports/${exportId}?t=${parsedMsg.val.payload.token}`;
+                                document.getElementById("title").innerText = "Completed";
+                                document.getElementById("desc").innerHTML = `Here is your download link: <a href='${downloadLink}'>${downloadLink}</a>`;
+                                ws.close();
+                                return;
+                            }
+                            clearInterval(iv);
+                        }, 3000);
+                    }
+                });
+            });
+            ws.addEventListener("error", e => {
+                document.getElementById("title").innerText = "Error";
+                document.getElementById("desc").innerText = `Failed connecting to CL server: ${e}`;
+                ws.close();
+                return;
+            });
+        });
+    </script>
+</body>
+</html>
