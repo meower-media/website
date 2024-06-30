@@ -10,12 +10,10 @@
     <link rel="canonical" href="https://meower.org">
     <link rel="apple-touch-icon" sizes="512x512" href="images/assets/safari-touch-512.png">
     <meta property="og:image" content="images/assets/safari-touch-512.png">
-
     <meta name="theme-color" content="#181818">
     <meta name="background-color" content="#181818">
     <meta name="apple-mobile-web-app-title" content="Meower">
     <meta property="og:title" content="Meower">
-
     <meta name="description" content="
     Meower is an innovative non-profit and open-source social media platform that prioritizes user privacy by never selling your data, never collecting more than we need to, and never displaying ads.
     ">
@@ -228,11 +226,24 @@
     </div>
 </body>
 <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
+    document.addEventListener('DOMContentLoaded', () => {
         const carousel = document.querySelector('.carousel');
-        const banners = document.querySelectorAll('.banner');
-        let index = 0;
+        const banners = Array.from(document.querySelectorAll('.banner'));
 
+        //function to shuffle
+        const shuffleArray = (array) => {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        };
+
+        //shuffle banners
+        const shuffledBanners = shuffleArray(banners);
+        shuffledBanners.forEach(banner => carousel.appendChild(banner));
+
+        let index = 0;
         const slide = () => {
             index++;
             if (index >= banners.length) {
@@ -247,5 +258,4 @@
         setInterval(slide, 5000);
     });
 </script>
-
 </html>
