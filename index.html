@@ -241,6 +241,7 @@
         //shuffle banners
         const shuffledBanners = shuffleArray(banners);
         shuffledBanners.forEach(banner => carousel.appendChild(banner));
+        carousel.scrollTo({ left: 0, behavior: "instant" });
 
         let index = 0;
         const slide = () => {
