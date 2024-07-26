@@ -17,7 +17,7 @@ Authored by: ShowierData9978 <contact@showierdata.xyz> on 4/18/24 (CT).
 
 - Cache chat and post data
 - Use Cloudlink to get updates to cached information
-- You must use the latest version of the API or Websocket.
+- You should use the latest version of the API
 
 ### Vulnerabilities
 
@@ -28,7 +28,7 @@ If your client is discovered to have a vulnerability, you must fix said vulnerab
 To be featured, your client must have at least these features. 
 
 - Sending, editing, and deleting posts
-- Updating chats when added to/removed from one
+- Updating chats when `update_chat` is sent (or similar in the case of updates) 
 - User profiles
 	- Quotes
 - Profile picture support
