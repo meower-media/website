@@ -7,7 +7,6 @@ Authored by: ShowierData9978 <contact@showierdata.xyz> on 4/18/24 (CT).
 
 ## Rules
 - Clients created for malicious intent will not be featured
-- Clients must have their own Privacy Policy
 - If your client implements any kind of plugin/addon interface, any plugins that are featured (or in the repo) are considered to be part of the client.
 - The Meower Team may, at it's sole discretion, choose whether or not a client should be featured
 - The Meower Team may feature a client despite not complying with this RFC
@@ -18,7 +17,7 @@ Authored by: ShowierData9978 <contact@showierdata.xyz> on 4/18/24 (CT).
 
 - Cache chat and post data
 - Use Cloudlink to get updates to cached information
-- You must use V1 of the WebSocket Server
+- You must use the latest version of the API or Websocket.
 
 ### Vulnerabilities
 
@@ -42,8 +41,8 @@ To be featured, your client must have at least these features.
 - Home page
 - Settings
 	- Quote
-  - Profile pictures
  	- Typing indicator
+- Profile pictures
 - Searching users
 - Searching posts
 - Blocking users
