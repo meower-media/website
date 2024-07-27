@@ -40,8 +40,10 @@ To be featured, your client must have at least these features.
 - Signing up
 - Home page
 - Settings
-	- Quote
+	 - Quote
  	- Typing indicator
+- Post reactions
+- Post replies
 - Profile pictures
 - Searching users
 - Searching posts
