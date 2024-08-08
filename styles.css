@@ -244,6 +244,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    min-height: 50vh;
 }
 
 .span-header {
