@@ -36,6 +36,7 @@ To be featured, your client must have at least these features.
 - Chats:
     - Chat creation
     - Chat member management
+    - Chat message pinning
 - Logging in
 - Signing up
 - Home page
