@@ -38,11 +38,14 @@ To be featured, your client must have at least these features.
     - Chat member management
     - Chat message pinning
 - Logging in
+    - MFA support
 - Signing up
 - Home page
 - Settings
-	 - Quote
- 	- Typing indicator
+    - Quote
+    - Typing indicator
+    - Enable/disable MFA
+
 - Post reactions
 - Post replies
 - Profile pictures
@@ -51,6 +54,7 @@ To be featured, your client must have at least these features.
 - Blocking users
 - Typing indicator support that users must be able to disable
 - CommonMark support 
+- Image uploads
 - Image host whitelist, can be disabled by the user (with a warning before disabling)
     
     Current list of allowed image hosts:
