@@ -28,7 +28,7 @@ If your client is discovered to have a vulnerability, you must fix said vulnerab
 To be featured, your client must have at least these features. 
 
 - Sending, editing, and deleting posts
-- Updating chats when `update_chat` is sent (or similar in the case of updates) 
+- Updating chats/users/posts when the respective event is sent (or similar in the case of updates) 
 - User profiles
 	- Quotes
 - Profile picture support
