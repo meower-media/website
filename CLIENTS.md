@@ -8,7 +8,7 @@ Authored by: ShowierData9978 <contact@showierdata.xyz> on 4/18/24 (CT).
 
 ## Rules
 - Clients created for malicious intent will not be featured
-- Clients must be Open Source Software (Any OSI approved licence) .
+- Clients must be Open Source Software (Any OSI approved licence).
 - If your client implements any kind of plugin/addon interface, any plugins that are featured (or in the repo) are considered to be part of the client.
 - The Meower Team may, at it's sole discretion, choose whether or not a client should be featured
 - The Meower Team may feature a client despite not complying with these guidelines.
