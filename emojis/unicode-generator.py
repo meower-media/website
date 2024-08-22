@@ -39,7 +39,28 @@ if not resp.ok:
 
 resp_json = resp.json()
 
+# Combine 'smileys_emotion' and 'people_body' into one 'people_emotion' category
+resp_json[0].update({
+    "name": "People & Emotion",
+    "slug": "people_emotion",
+    "emojis": resp_json[0]["emojis"] + resp_json[1]["emojis"]
+})
+del resp_json[1]
+
 for category in resp_json:
+    # Add icon emoji to category
+    # These are taken from meo, sorry mr. roarer
+    category["icon_emoji"] = {
+        "people_emotion": "😀",
+        "animals_nature": "😺",
+        "food_drink": "🍎",
+        "travel_places": "🏠",
+        "activities": "⚽",
+        "objects": "📃",
+        "symbols": "❤️",
+        "flags": "🏳️‍🌈"
+    }.get(category["slug"])
+
     for emoji in category["emojis"]:
         # Replace name with slug
         emoji["name"] = emoji.pop("slug")
